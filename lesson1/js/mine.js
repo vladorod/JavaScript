@@ -1,6 +1,5 @@
 let money 
 let date 
-page = ''
 
 // объект с данными 
 
@@ -82,7 +81,7 @@ function getDate() {
     return new Date().toLocaleDateString()
 }
 
- // Функция для отображения всех существующих блоков и с ссылками на них
+// Функция для отображения всех существующих блоков и с ссылками на них
 
  function getMenu() { 
     pages = { } 
