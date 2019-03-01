@@ -5,7 +5,7 @@ let date
 
 appData = { 
     budget: '', 
-    timeData: '',
+    timeData: getDate(),
     expenses: {},
     optionlExpenses: {},
     income: [],
@@ -28,17 +28,27 @@ page = {
      },
      "second": () => { 
         container.innerHTML = 
-        `<h1 id='title'>Сеодня ${ getDate() }?</h1>
-        <input type="button" onclick=" page.budget() "  value="ДА" id="next"></input>
+        `<h1 id='title'>Сеодня ${ appData.timeData }?</h1>
+        <input type="button" onclick=" page.expenses()  "  value="ДА" id="next"></input>
         <input type="button" onclick=" page.third() " value="НЕТ" id='button'>`;
      },
      "third": () => { 
         container.innerHTML =   
         `<h1 id='title'> Укажите дату 
         <input type="date" id='input'></input>?</h1>
-        <input type="button" onclick="forthird()" value="СОХРАНИТЬ" id='button'>`;
+        <input type="button" onclick="forthird()" value="СОХРАНИТЬ" id='button'> `;
      }, 
     
+    "expenses": () => { 
+        container.innerHTML =   
+        `<h1 id='title'>Введите обязательную статью расходов в этом месяце</h1>
+        <input type="text" id='consumption'>
+        <h1 id='title'> Во сколько обойдется? </h1>
+        <input type="text" id="price"><br>
+        <input type="button" onclick="expenses()" id="send" value='отправить'> 
+        `
+    },
+
      "budget": () => { 
         container.innerHTML =   
         `<h1 id='title'>Твой бюджет на день ${Math.ceil(appData.budget/30)} руб</h1>` // делим бюджет на 30 дней 
@@ -62,12 +72,18 @@ function forFirst() {
 }
 function forthird() { 
     appData.timeData = input.value
-    page.budget()  
+    page.expenses()  
 }
-function forbudget() { 
-    appData.budget = input.value 
-    page.budget()  
- }
+ 
+function expenses ()  
+{ 
+    let consumption = document.querySelector('#consumption').value 
+    let price = document.querySelector('#price').value 
+    appData.expenses = { consumption , price }  // в задании сказанно что запись в нем должна быть такого типа вопрос1 : вопрос2 
+    console.log(consumption,price)              // но я не понял как назначить ключь для объекта 
+    page.budget()
+}
+
 
  // Функция для получения даты
 
