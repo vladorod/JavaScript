@@ -1,7 +1,7 @@
 let money 
 let date 
 
-// объект с данными 
+// объект с данными приложения  
 
 appData = { 
     budget: '', 
@@ -51,7 +51,10 @@ page = {
 
      "budget": () => { 
         container.innerHTML =   
-        `<h1 id='title'>Твой бюджет на день ${Math.ceil(appData.budget/30)} руб</h1>` // делим бюджет на 30 дней 
+        `<h1 id='title'>Твой бюджет на день ${Math.ceil(appData.budget/30)} руб</h1>` 
+        // тут просто делим бюджет на 30 дней (я так пологаю, 
+        // что он должен взаимодействовать с теми вопросами о затратах,
+        // но в задании этого не написанно по этому пока вот так c: )
      },
 }
 
@@ -75,6 +78,7 @@ function forthird() {
     page.expenses()  
 }
  
+
 function expenses ()  
 { 
     let consumption = document.querySelector('#consumption').value 
@@ -91,7 +95,7 @@ function getDate() {
     return new Date().toLocaleDateString()
 }
 
-// Функция для отображения всех существующих блоков и с ссылками на них
+// Функция для отображения всех существующих блоков и с ссылками на них (dev)
 
  function getMenu() { 
     pages = { } 
