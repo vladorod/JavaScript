@@ -16,4 +16,4 @@ math = {
                 console.log(sum = sum + Number(num[j+1]));            
     }
 }}
-math.multiplay("33721")
+math.plus("33721")

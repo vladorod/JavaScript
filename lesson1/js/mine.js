@@ -1,5 +1,7 @@
-let money 
-let date 
+'use script'
+
+let money = ''
+let date = ''
 
 // объект с данными приложения  
 
@@ -12,7 +14,7 @@ appData = {
     saving: false,
 }
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".container")
 
 // page это объект в котором хранятся значения с 
 // с функциями для рендера блоков 
@@ -81,11 +83,13 @@ function forthird() {
 
 function expenses ()  
 { 
-    let consumption = document.querySelector('#consumption').value 
-    let price = document.querySelector('#price').value 
-    appData.expenses = { consumption , price }  // в задании сказанно что запись в нем должна быть такого типа вопрос1 : вопрос2 
-    console.log(consumption,price)              // но я не понял как назначить ключь для объекта 
+    let consumption = document.querySelector('#consumption').value
+    let price = document.querySelector('#price').value
+    new passData(consumption, price)
+    console.log(consumption,price)              
     page.budget()
+    // в задании сказанно что запись в нем должна быть такого типа вопрос1 : вопрос2 
+    // но я не понял как назначить ключь для объекта 
 }
 
 
@@ -111,3 +115,9 @@ function getDate() {
  function getAppData() { 
     console.table(appData, 12)
  }
+
+ //Конструктор для добовления expenses в базу приложения
+ 
+ function passData(consumption,price) { 
+    appData.expenses['"' + consumption + '"'] = price;
+}
