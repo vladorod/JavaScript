@@ -95,7 +95,9 @@ function getDate() {
     return new Date().toLocaleDateString()
 }
 
-// Функция для отображения всех существующих блоков и с ссылками на них (dev)
+//Команды для консоли 
+
+// Функция для отображения всех существующих блоков и с ссылками на них 
 
  function getMenu() { 
     pages = { } 
@@ -103,3 +105,9 @@ function getDate() {
     container.insertAdjacentHTML('afterend',`<h1 onclick="page.${ key }()">${ key } </h1>`)
     }
  } 
+
+// Для отоброжения базы приложения в красивой табличке (консоль)
+
+ function getAppData() { 
+    console.table(appData, 12)
+ }
