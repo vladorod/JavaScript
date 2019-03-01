@@ -29,7 +29,7 @@ page = {
      "second": () => { 
         container.innerHTML = 
         `<h1 id='title'>Сеодня ${ getDate() }?</h1>
-        <input type="button" onclick=" page.fourth() "  value="ДА" id="next"></input>
+        <input type="button" onclick=" page.budget() "  value="ДА" id="next"></input>
         <input type="button" onclick=" page.third() " value="НЕТ" id='button'>`;
      },
      "third": () => { 
@@ -39,7 +39,7 @@ page = {
         <input type="button" onclick="forthird()" value="СОХРАНИТЬ" id='button'>`;
      }, 
     
-     "fourth": () => { 
+     "budget": () => { 
         container.innerHTML =   
         `<h1 id='title'>Твой бюджет на день ${Math.ceil(appData.budget/30)} руб</h1>` // делим бюджет на 30 дней 
      },
@@ -55,24 +55,18 @@ const button = document.querySelector('#button')
 // функции для смены блоков на страничке и присваивания значений в объект с данными
 
 function forFirst() {
-    
-    value = input.value
-    
-    if (isNaN(value)) {
-        document.querySelectorAll('#err').innerHTML = 'введите число'
-    } else { 
+
         appData.budget = input.value 
         page.second()  
-    }
    
 }
 function forthird() { 
     appData.timeData = input.value
-    page.fourth()  
+    page.budget()  
 }
-function forfourth() { 
+function forbudget() { 
     appData.budget = input.value 
-    page.fourth()  
+    page.budget()  
  }
 
  // Функция для получения даты
