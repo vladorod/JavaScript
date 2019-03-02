@@ -34,14 +34,14 @@ function day()
 // 2) Создать массив arr = []
 
 
-let arr = ['137343','214848','2421', '5665345','565487']
+let arr = ['137343','214848','7421', '5665345','365487']
 
 
     let pass = []
     for (let i = 0; i < arr.length; i++) { 
         let array = arr[i]
         for (let j = 0; j < array.length; j++) {
-            if (array[j] == '3'|| array[j] == '7' ) 
+            if (array[0] == '3'|| array[0] == '7' ) 
             { 
                 pass.push(array)
                 break;  
