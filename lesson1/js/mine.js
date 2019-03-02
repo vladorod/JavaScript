@@ -80,11 +80,14 @@ function forthird() {
     page.expenses() 
 }
 
-let toEval = 0;
+let toEvil = 0;
  function ForExpenses () 
  {
-   if (toEval == 0 ) { 
-      toEval++
+   const consumption = document.querySelector('#consumption').value
+   const price = document.querySelector('#price').value
+   passData(consumption,price)
+   if (toEvil == 0 ) { 
+      toEvil++
       page.expenses()
    } else { 
       page.budget()  
