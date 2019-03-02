@@ -1,10 +1,11 @@
 'use script'
 
-let week = ['понедельник','вторник','среда','четрвег', ,'пятница','суббота','воскресенье']; 
+let week = ['понедельник','вторник','среда','четрвег', 'пятница','суббота','воскресенье']; 
 let root = document.querySelector('#root')
-let i = 0 
+let i = 0
+
 for(let i in week) { 
-    if (week[i] == day()) { root.insertAdjacentHTML('afterbegin', `<span style="font-syle: italic"> > ${ week[i] } </span> <br>`); continue;}
+    if (week[i] == day()) { root.insertAdjacentHTML('afterbegin', `<span style="font-style: italic;"> > ${ week[i] } </span> <br>`); continue;}
    switch(week[i]) 
     {
         case 'суббота' :
