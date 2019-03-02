@@ -31,8 +31,8 @@ let page = {
      "second": () => { 
         container.innerHTML = 
         `<h1 id='title'>Сеодня ${ appData.timeData }?</h1>
-        <input type="button" onclick=" page.expenses()  "  value="ДА" id="next"></input>
-        <input type="button" onclick=" page.third() " value="НЕТ" id='button'>`;
+        <input type="button" onclick="page.expenses()"  value="ДА" id="next"></input>
+        <input type="button" onclick="page.third()" value="НЕТ" id='button'>`;
      },
      "third": () => { 
         container.innerHTML =   
@@ -47,7 +47,7 @@ let page = {
         <input type="text" id='consumption'>
         <h1 id='title'> Во сколько обойдется? </h1>
         <input type="text" id="price"><br>
-        <input type="button" onclick="expenses()" id="send" value='отправить'> 
+        <input type="button" onclick="ForExpenses()" id="send" value='отправить'>
         `
     },
 
@@ -77,21 +77,20 @@ function forFirst() {
 }
 function forthird() { 
     appData.timeData = input.value
-    page.expenses()  
-}
- 
-
-function expenses ()  
-{ 
-    let consumption = document.querySelector('#consumption').value
-    let price = document.querySelector('#price').value
-    new passData(consumption, price)
-    console.log(consumption,price)              
-    page.budget()
-    // в задании сказанно что запись в нем должна быть такого типа вопрос1 : вопрос2 
-    // но я не понял как назначить ключь для объекта 
+    page.expenses() 
 }
 
+let toEval = 0;
+ function ForExpenses () 
+ {
+   if (toEval == 0 ) { 
+      toEval++
+      page.expenses()
+   } else { 
+      page.budget()  
+   }
+
+ }
 
  // Функция для получения даты
 
