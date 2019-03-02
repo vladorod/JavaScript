@@ -52,7 +52,7 @@ do {
 
    if ( (typeof(a)) === 'string' && (typeof(b)) != null && a != '' && b!='' && a.length < 50 ) {
       console.log('done');
-      new passData(a,b)
+      passData(a,b)
     } else continue;
  }
  
