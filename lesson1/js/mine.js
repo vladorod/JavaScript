@@ -1,11 +1,11 @@
-'use script'
+'use strict'
 
 let money = ''
 let date = ''
 
 // объект с данными приложения  
 
-appData = { 
+let appData = { 
     budget: '', 
     timeData: getDate(),
     expenses: {},
@@ -20,7 +20,7 @@ const container = document.querySelector(".container")
 // с функциями для рендера блоков 
 // которые будут отображаться на страничке 
 
-page = {
+let page = {
     "first": () => { 
         container.innerHTML = 
         `<h1 id='title'>Ваш бюджет на месяц?</h1>
@@ -119,5 +119,5 @@ function getDate() {
  //Конструктор для добовления expenses в базу приложения
  
  function passData(consumption,price) { 
-    appData.expenses['"' + consumption + '"'] = price;
+    appData.expenses[consumption] = price;
 }

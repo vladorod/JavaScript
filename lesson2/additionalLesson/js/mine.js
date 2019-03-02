@@ -1,4 +1,4 @@
-'use script'
+'use strict'
 
 let week = ['понедельник','вторник','среда','четрвег', 'пятница','суббота','воскресенье']; 
 let root = document.querySelector('#root')
@@ -17,10 +17,8 @@ for(let i in week) {
         default: root.insertAdjacentHTML('afterbegin', `<span > ${ week[i] } </span> <br>`);
 
     }
-
     
 }
-
 
 
 function day() 
@@ -29,4 +27,34 @@ function day()
     let date = new Date
     let datetoday = date.getDay()
     return  week[datetoday]
+}
+
+
+
+// 2) Создать массив arr = []
+
+
+arr = []
+
+
+ 
+for ( let i = 0; i < 7; i++ ) { 
+    arr.push(randomInteger(1,50))
+}
+
+ 
+
+function randomInteger(min, max) {
+    var rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    toString(rand)
+    return rand;
+  }
+
+function serch( where, what ) { 
+    for ( i in where ) { 
+      if ( where[0] == what ) { 
+          return where[i]  
+         }  else return false 
+    }
 }

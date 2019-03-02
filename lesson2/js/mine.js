@@ -1,4 +1,4 @@
-"use script"
+'use strict'
 
 let money = +prompt('Ваш бюджет на месяц?',''), 
     time =  prompt('Введите вашу дату yyyy-mm-dd','')
@@ -19,7 +19,8 @@ appData.budjet = money
 // for (let i = 0; i < 2; i++)
 // {
 //    let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
-//        b = prompt(`Восколько обойдеться?`, '')
+//        b = prompt(`Во сколько обойдется?`, '')
+
 
 //    if ( (typeof(a)) === 'string' && (typeof(b)) != null && a != '' && b!='' && a.length < 50 ) {
 //       console.log('done');
@@ -33,7 +34,8 @@ appData.budjet = money
 // while (i < 2) {
 //    i++
 //    let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
-//        b = prompt(`Восколько обойдеться?`, '')
+//          b = prompt(`Во сколько обойдется?`, '')
+
 
 //    if ( (typeof(a)) === 'string' && (typeof(b)) != null && a != '' && b!='' && a.length < 50 ) {
 //       console.log('done');
@@ -46,11 +48,11 @@ let i = 0;
 do {
    i++
    let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
-       b = prompt(`Восколько обойдеться?`, '')
+       b = prompt(`Во сколько обойдется?`, '')
 
    if ( (typeof(a)) === 'string' && (typeof(b)) != null && a != '' && b!='' && a.length < 50 ) {
       console.log('done');
-      appData.expenses['"'+ a +'"'] = b 
+      appData.expenses[a] = b 
     } else continue;
  }
  

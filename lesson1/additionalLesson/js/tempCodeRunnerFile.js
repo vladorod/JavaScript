@@ -1,5 +1,3 @@
-'use script'
-
 math = {
     multiplay: (num) => { 
         var sum = Number(num[0])
