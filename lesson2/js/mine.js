@@ -52,7 +52,7 @@ do {
 
    if ( (typeof(a)) === 'string' && (typeof(b)) != null && a != '' && b!='' && a.length < 50 ) {
       console.log('done');
-      appData.expenses[a] = b 
+      new passData(a,b)
     } else continue;
  }
  
@@ -68,4 +68,8 @@ if (appData.moneyPerDay < 100) {
    console.log('Средний уровень достатка')
 } else if (appData.moneyPerDay > 2000  ) { 
    console.log('Высокий уровень достатка')
+}
+
+function passData(consumption,price) { 
+   appData.expenses[consumption] = price;
 }
