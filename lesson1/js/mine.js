@@ -64,7 +64,7 @@ let page = {
 
 page.first()
 
-const input = document.querySelector('#input')
+const input =  document.querySelector('#input')
 const button = document.querySelector('#button')
 
 // функции для смены блоков на страничке и присваивания значений в объект с данными

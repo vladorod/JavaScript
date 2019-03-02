@@ -34,22 +34,26 @@ function day()
 // 2) Создать массив arr = []
 
 
-arr = []
+let arr = ['137343','214848','2421', '5665345','565487']
 
+
+    let pass = []
+    for (let i = 0; i < arr.length; i++) { 
+        let array = arr[i]
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] == '3'|| array[j] == '7' ) 
+            { 
+                pass.push(array)
+                break;  
+            }
+        }
+    }
+    console.log(pass)
+ 
+ 
 
  
-for ( let i = 0; i < 7; i++ ) { 
-    arr.push(randomInteger(1,50))
-}
-
  
-
-function randomInteger(min, max) {
-    var rand = min - 0.5 + Math.random() * (max - min + 1)
-    rand = Math.round(rand);
-    toString(rand)
-    return rand;
-  }
 
 function serch( where, what ) { 
     for ( i in where ) { 
