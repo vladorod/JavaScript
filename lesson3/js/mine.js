@@ -36,7 +36,7 @@ function chooseExpenses() {
    let i = 0; 
 
    do {
-   i++
+   i++;
    let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
        b = prompt(`Во сколько обойдется?`, '');
 
@@ -49,7 +49,7 @@ function chooseExpenses() {
     } 
 
     else {
-       i--
+       i--;
 
     };
 
@@ -77,7 +77,7 @@ function chooseOptExpenses() {
 
       appData.optionalExpenses[i] = a;
     } else {
-       i--
+       i--;
     };
  }
  while (i < 3);
@@ -91,7 +91,7 @@ function detectLevel() {
 
    if (appData.moneyPerDay < 100)
    { 
-      console.log('Минимальный урвоень достатка');
+   console.log('Минимальный урвоень достатка');
    }
    else if (appData.moneyPerDay > 100 && appData.moneyPerDay< 2000 ) 
    {
