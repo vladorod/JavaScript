@@ -1,9 +1,15 @@
-'use strict'
+ 
+   'use strict'
 
-let money = +prompt('Ваш бюджет на месяц?',''), 
-    time =  prompt('Введите вашу дату yyyy-mm-dd','')
+   let money, time; 
+   money = +prompt('Ваш бюджет на месяц?',''); 
+   time =  prompt('Введите вашу дату yyyy-mm-dd','');
 
+   while(isNaN(money) || money == "" || money == null) { 
+     money = +prompt('Ваш бюджет на месяц?',''); 
+   }
 
+  
 let appData = { 
      budjet: '', 
      timeData: '',
@@ -64,12 +70,19 @@ alert(`Ежедневный бюджет : ${appData.budjet / 30}`)
 
 if (appData.moneyPerDay < 100) { 
    console.log('Минимальный урвоень достатка')
-} else if (appData.moneyPerDay > 100 && appData.moneyPerDay< 2000 ) { 
+}
+else if (appData.moneyPerDay > 100 && appData.moneyPerDay< 2000 ) { 
    console.log('Средний уровень достатка')
-} else if (appData.moneyPerDay > 2000  ) { 
+} 
+else if (appData.moneyPerDay > 2000  ) { 
    console.log('Высокий уровень достатка')
 }
 
 function passData(consumption,price) { 
    appData.expenses[consumption] = price;
 }
+
+ 
+
+
+
