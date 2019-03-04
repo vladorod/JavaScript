@@ -59,7 +59,6 @@ if ( space[0] == ' ' ) {
   } 
 
 if ( space[space.length - 1] == ' ' ) {
-    console.log('work')
     delete space[space.length -1 ]
   }
  return space.join('')
