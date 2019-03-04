@@ -46,8 +46,9 @@ for (let i = 0; i < arr.length; i++) {
     else break;
 }
 let end = 0;
-for (let i = 0; i < sum.length; i++) {
-    end = end + sum[i];
+for (let i = 0; i < sum.length; i++) 
+{
+end = end + sum[i];
 }
 console.log(end);
 console.log(Math.sqrt(end));
