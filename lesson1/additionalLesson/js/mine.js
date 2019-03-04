@@ -17,4 +17,4 @@ function multiplay (num)  {
 
 let mult =  String(multiplay('33721') ** 3) 
 
-console.log(`Умножение - ${mult[0]}${mult[1]}`)
+console.log(`Умножение - ${mult.substr(0,2)}`)
