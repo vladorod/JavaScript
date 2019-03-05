@@ -24,7 +24,7 @@
             else 
             {
                i--;
-            };
+            }
          }
          while (i < 3);
    },
@@ -72,7 +72,7 @@
                appData.expenses[a] = b;
             } else {
                i--;
-            };
+            }
          }
          
          while (i < 2);
@@ -101,16 +101,16 @@
  appData.detectDayBudget();
  appData.checkSavings();
  appData.chooseOptExpenses();
-   appData.chooseIncome();
+ appData.chooseIncome();
 
    // for (let key in appData) { 
-   //    console.log(`Наша программа включает в себя ${key} :  ${appData[key]}`)
+   //    console.log(`Наша программа включает в себя ${key} :  ${appData[key]}`);
    // }
    for (let key in appData) { 
-      console.log(`Наша программа включает в себя данные: ${appData[key]}`)
+      console.log(`Наша программа включает в себя данные: ${appData[key]}`);
    }
 
    appData.income.forEach((item,i,mass) => { 
-          console.log(`${i+1} : ${item} }`)
+          console.log(`${i+1} : ${item} }`);
        })
   
