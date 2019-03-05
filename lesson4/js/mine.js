@@ -37,13 +37,14 @@ let appData =
   },
   //3
   chooseIncome: () => { 
-    let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
-  
-    if (items != '' && (typeof(items)) == 'string' && (typeof (items)) != null) {
-      appData.income = items.split(', ');
-      appData.income.push(prompt('Может что-то еще', ''));
-      appData.income.sort(); 
-     } else appData.chooseIncome()
+   let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
+   appData.income.push(prompt('Может что-то еще', ''));
+   while (items == null || items == "" || (typeof(items)) != "string") {
+       items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
+       appData.income.push(prompt('Может что-то еще', ''));      
+     };
+   appData.income = items.split(', ');
+   appData.income.sort();
   },
   //4
   start: () => { 
@@ -105,6 +106,6 @@ for (let key in appData) {
 };
 
 appData.income.forEach((item,i,mass) => { 
-       console.log(`${i+1} : ${item} }`);
+       console.log(`${i+1} : ${item}`);
     });
   
