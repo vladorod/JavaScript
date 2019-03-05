@@ -7,7 +7,7 @@ let appData =
   budjet: '',
   timeData: '',
   expenses: {},
-  optionlExpenses: {},
+  optionalExpenses: {},
   income: [],
   saving: true,
   //1
