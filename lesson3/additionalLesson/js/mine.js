@@ -2,17 +2,17 @@
 
 let str = 'урок-3-был слишком легким';
 
- 
 // 1
 
 str = str[0].toUpperCase() + str.substr(1, str.length);
 str = str.split('');
+
 // 2
 
 for (let i = 0; i < str.length; i++) { 
-    if (str[i] == " ") { 
-        str.splice(i, 1, '-' );
-    }; 
+  if (str[i] == " ") { 
+    str.splice(i, 1, '-' );
+  }; 
 };
 str = str.join('');
 console.log(str);
@@ -35,49 +35,25 @@ let arr = [20, 33, 1, 'Человек', 2, 3];
 
 arr.splice(3,1);
 
-let sum = [];
+let result = arr.reduce((sum, current) => {
+return sum + Math.pow(current, 3)
+ }, 0)
 
-for (let i = 0; i < arr.length; i++) {
+console.log(` 4 : ${Math.sqrt(result)}`);
 
-    if (i + 1 < arr.length) 
-    { 
-    sum.push(arr[i]**3 + arr[i + 1]**3);
-    }
-    else break;
-}
-let end = 0;
-for (let i = 0; i < sum.length; i++) 
-{
-end = end + sum[i];
-}
-console.log(end);
-console.log(Math.sqrt(end));
-
-// 4 
+  // 5
 
 function delSpace (space) { 
-
-    if ((typeof(space)) != 'string') { 
+  if ((typeof(space)) != 'string') { 
     console.log('not string');
 }
-
-space = space.split('');
-
-if ( space[0] == ' ' ) {
-    delete space[0];
-
-  } 
-
-if ( space[space.length - 1] == ' ' ) {
-    
-    delete space[space.length -1 ];
   
-}
-
-
-if (space.length - 1 > 50) { 
-   space.splice(50, space.length - 50, '...');
-}
-
- return space.join('');
+  space = space.trim();
+  space = space.split('');
+  
+  if (space.length - 1 > 50) { 
+    space.splice(50, space.length - 50, '...');
+  }
+  
+return space.join('');
 }
