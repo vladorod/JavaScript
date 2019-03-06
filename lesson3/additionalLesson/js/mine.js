@@ -44,10 +44,9 @@ console.log(` 4 : ${Math.sqrt(result)}`);
   // 5
 
 function delSpace (space) { 
-  if ((typeof(space)) != 'string') { 
+  if ((typeof(space)) != 'string' && space == null ) { 
     console.log('not string');
-}
-  
+} else { 
   space = space.trim();
   space = space.split('');
   
@@ -56,4 +55,5 @@ function delSpace (space) {
   }
   
 return space.join('');
+}
 }
