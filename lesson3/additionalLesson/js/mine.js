@@ -47,13 +47,13 @@ function delSpace (space) {
   if ((typeof(space)) != 'string' && space == null ) { 
     console.log('not string');
 } else { 
-  space = space.trim();
-  space = space.split('');
+    space = space.trim();
+    space = space.split('');
+    
+    if (space.length - 1 > 50) { 
+      space.splice(50, space.length - 50, '...');
+    }
   
-  if (space.length - 1 > 50) { 
-    space.splice(50, space.length - 50, '...');
-  }
-  
-return space.join('');
-}
+   return space.join('');
+   }
 }
