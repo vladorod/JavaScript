@@ -15,9 +15,9 @@ root.innerHTML = `<h1>${h}:${m}:${s} ${day}:${mon}:${yea} > ${Day()} </h1>`;
 
 function Day() {
     let week = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота']; 
-    let date = new Date
-    let datetoday = date.getDay()
-    return  week[datetoday]
+    let date = new Date;
+    let datetoday = date.getDay();
+    return  week[datetoday];
 }
 
 function addZero(i) {
