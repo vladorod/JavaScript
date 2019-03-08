@@ -23,7 +23,7 @@ menu.append(liItemMenu);
 
 let title = document.querySelector('#title'),
     adv = document.querySelector('.adv'),
-    prompt = document.querySelector('.prompt');
+    prom = document.querySelector('.prompt');
     
 title.textContent = "Мы продаем только подлинную технику Apple";
 
@@ -33,7 +33,7 @@ adv.remove();
 
 // вот так не получилось выводит ошибку что prompt is not a function 
 
-//prompt.textContent = prompt('Какое у вас отношение к эпл?','');
+prom.textContent = prompt('Какое у вас отношение к эпл?','');
 
 // по этому вот так..  вроде задание не нарушил..
 
@@ -43,20 +43,20 @@ divText = document.createElement('div');
 
 divText.innerHTML = "</br> <h3>Как вы относитесь к APPLE?</h3>"
 
-promptinput.type = 'text';
-promptinput.style.width = '250px';
-promptinput.style.height = '50px';
-promptinput.style.fontSize = '15px';
+// promptinput.type = 'text';
+// promptinput.style.width = '250px';
+// promptinput.style.height = '50px';
+// promptinput.style.fontSize = '15px';
 
-prompt.style.fontSize = '25px';
+// prompt.style.fontSize = '25px';
 
-promptButton.textContent = 'save';
-promptButton.onclick = () => { prompt.textContent = promptinput.value }; // вот тут почему-то функцию не захотел встовлять
-promptButton.style.width = '50px';
-promptButton.style.height = '50px';
+// promptButton.textContent = 'save';
+// promptButton.onclick = () => { prompt.textContent = promptinput.value }; // вот тут почему-то функцию не захотел встовлять
+// promptButton.style.width = '50px';
+// promptButton.style.height = '50px';
  
 
-prompt.append(divText,promptinput,promptButton);
+// prompt.append(divText,promptinput,promptButton);
 
 
 
