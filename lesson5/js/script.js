@@ -50,7 +50,7 @@ promptinput.style.fontSize = '15px';
 prompt.style.fontSize = '25px';
 
 promptButton.textContent = 'save';
-promptButton.onclick = () => { prompt.textContent = promptinput.value }; // вот тут почему-то функцию не захотел встовлять 
+promptButton.onclick = () => { prompt.textContent = promptinput.value }; // вот тут почему-то функцию не захотел встовлять
 promptButton.style.width = '50px';
 promptButton.style.height = '50px';
  
