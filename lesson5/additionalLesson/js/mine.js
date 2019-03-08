@@ -49,7 +49,6 @@ function MkDaysLeft(sDeadLineDate){
         if (sDaysLeft.charAt(nDaysLeftLength - 1) == "2" || sDaysLeft.charAt(nDaysLeftLength - 1) == "3" || sDaysLeft.charAt(nDaysLeftLength - 1) == "4") sDaysText = "дня";
         else if (sDaysLeft.charAt(nDaysLeftLength - 1) == "1") sDaysText = "день";
       }
-      let sLeftText = sDaysText == "день" ? "остался" : "осталось";
       
       document.write(nDaysLeft + " " + sDaysText + ".");
     } 
