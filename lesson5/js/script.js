@@ -1,5 +1,6 @@
 
 // Изминение бг 
+'use scrict'
 
 document.body.style.background = "url('./img/apple_true.jpg')"; 
 
