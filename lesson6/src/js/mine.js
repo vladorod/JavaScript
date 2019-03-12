@@ -32,13 +32,14 @@ let startCalculating = document.getElementById('start'),
       income: [],
       saving: false,
       yearIncome: 0,
+      expensesCounter: 0,
+      start: false,
     };
       
 startCalculating.addEventListener('click',() => { 
+  appData.start = true;
   time = prompt('Введите вашу дату yyyy-mm-dd', '');
-  money = +prompt('Ваш бюджет на месяц?', '');
-  
-  
+  money = +prompt('Ваш бюджет на месяц?', ''); 
   while (isNaN(money) || money == "" || money == null) {
     money = +prompt('Ваш бюджет на месяц?', '');
   };
@@ -85,7 +86,7 @@ buttonCalculate.addEventListener('click', () => {
 
   if (appData.budjet != undefined && appData.budjet != 0 ) {
 
-    appData.moneyPerDay = (appData.budjet / 30).toFixed();
+    appData.moneyPerDay = (appData.budjet - +expenses.textContent) / 30;
 
     daybudget.textContent = appData.moneyPerDay;
 
@@ -139,3 +140,48 @@ choosePercent.addEventListener('input', () => {
      yearsavings.textContent = appData.yearIncome.toFixed(1);
      }
   });
+
+  buttonApprove1.style.filter = "grayscale(100%)"; 
+  buttonApprove1.disabled = true;
+  buttonApprove2.style.filter = "grayscale(100%)"; 
+  buttonApprove2.disabled = true;
+  buttonCalculate.style.filter = "grayscale(100%)"; 
+  buttonCalculate.disabled = true;
+
+
+function check(arr) { 
+  let counter = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].value != "") { 
+      counter = counter + 1;
+    }  else { 
+      counter = counter - 1;
+    }
+  }
+  return counter;
+}
+
+function addListner(array,btn) { 
+  for(let i = 0; i < array.length; i++){
+    array[i].addEventListener('input', () => { 
+      if (check(array) == array.length && appData.start == true) { 
+        btn.style.filter = "grayscale(0%)"; 
+        btn.disabled = false;
+      } else { 
+        btn.style.filter = "grayscale(100%)"; 
+        btn.disabled = true;
+      }
+      if (check(optionalexpensesItem) == optionalexpensesItem.length && check(expensesItem) == expensesItem.length && appData.start == true) {
+        buttonCalculate.style.filter = "grayscale(0%)"; 
+        buttonCalculate.disabled = false;
+      } else { 
+        buttonCalculate.style.filter = "grayscale(100%)"; 
+        buttonCalculate.disabled = true;
+      }
+    });
+   }
+};
+
+addListner(optionalexpensesItem,buttonApprove2);
+addListner(expensesItem,buttonApprove1);
