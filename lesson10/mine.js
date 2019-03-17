@@ -107,7 +107,7 @@ class options {
   }
 
   halo() { 
-      return console.log('hi')
+    return console.log('hi')
   }
 
   create(text = 'none') { 
@@ -127,4 +127,4 @@ class options {
 // И появился вопрос можно ли отслеживать как-то созданные элементы через конструктор?? ну напримемр, если хочешь чтобы все созданные элементы поменяли bg
 let i = new options();
 
-i.create('LOLIK')
+i.create('LOLIK');
