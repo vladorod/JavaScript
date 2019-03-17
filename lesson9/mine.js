@@ -83,9 +83,17 @@
 // 3) Конструкор (new) - this = новый создонный объект
 // 4) Указания конкретного котекста - call, apply, bind
 
-let btn = document.querySelector('button');
+// let btn = document.querySelector('button');
 
-btn.addEventListener('click', () => { 
-    console.log(this);
-    this.style.backgroundColor = red;
-})
+// btn.addEventListener('click', () => { 
+//     console.log(this);
+//     this.style.backgroundColor = red;
+// });
+
+let age = document.getElementById('age');
+
+function showUser(surname, name) {
+          alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+  }
+   
+   let user = showUser.call(age, 'Олег','Назаров')
