@@ -1,3 +1,5 @@
+"use strict";
+
 // let name = "ivan", 
 //     age = 13,
 //     mail = "ex@gmail.com"; 
@@ -97,8 +99,8 @@
 
 // console.log(log(...nunmbers));
 
-class options {
-  constructor(height = 20 + 'px', width = 20 + 'px', bg = 'red', fontSize = 10 + 'px', textAlign = 'center') { 
+class Options {
+  constructor(height = 40 + 'px', width = 40 + 'px', bg = 'red', fontSize = 10 + 'px', textAlign = 'center') { 
     this.height = height;
     this.width = width;
     this.bg = bg;
@@ -114,7 +116,7 @@ class options {
     let div = document.createElement('div');
     div.textContent = text;
     div.style.cssText= 
-    `background: ${this.bg} \
+    `background: ${this.bg}; \
     width: ${this.width}; \
     height: ${this.height}; \
     text-align: ${this.textAlign}; \
@@ -125,6 +127,6 @@ class options {
 }
 // тут он записывает не все стили и я не понимаю в чем прикол) 
 // И появился вопрос можно ли отслеживать как-то созданные элементы через конструктор?? ну напримемр, если хочешь чтобы все созданные элементы поменяли bg
-let i = new options();
+let i = new Options();
 
 i.create('LOLIK');
